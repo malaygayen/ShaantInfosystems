@@ -1,0 +1,49 @@
+﻿
+@model List<HighestReturnCount>
+
+<h1>Max highest return count</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Index type
+            </th>
+            <th>
+                Count
+            </th>
+        </tr>
+    </thead>
+ <tbody>
+@foreach(var item in Model )
+{
+        <tr>
+            
+            <td>
+                    @if (item.IndexType == 1)
+                    {
+                        <span>Nifty 50</span>
+                    }
+                    else if (item.IndexType == 2)
+                    {
+                        <span>Nifty 100</span>
+                    }
+                    else if (item.IndexType == 3)
+                    {
+                        <span>Nifty 200</span>
+                    }
+                    else
+                    {
+                        <span>Nifty 500</span>
+                    }
+                </td>
+            <td>
+                <span>@item.Count</span>
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
+

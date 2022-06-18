@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <hr />
+    <a href="@Url.ActionLink("DailyHighestReturns","NseData")" role="button">Daily highest returns</a>
+    <hr />
+    <a href="@Url.ActionLink("MaxHighestReturnsCount","NseData")" role="button">Maximum Highest Returns Count</a>
+</div>

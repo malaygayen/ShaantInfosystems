@@ -1,0 +1,54 @@
+﻿
+@model List<DailyHighestReturnViewModel>
+
+<h1>Daily highest return</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Date
+            </th>
+            <th>
+                Index type
+            </th>
+            <th>
+                Return percentage
+            </th>
+        </tr>
+    </thead>
+ <tbody>
+@foreach(var item in Model.OrderBy(a => a.CurrentDate) )
+{
+        <tr>
+            <td>
+                @item.CurrentDate.ToString("dd MMM yyyy")
+            </td>
+            <td>
+                    @if (item.IndexType == 1)
+                    {
+                        <span>Nifty 50</span>
+                    }
+                    else if (item.IndexType == 2)
+                    {
+                        <span>Nifty 100</span>
+                    }
+                    else if (item.IndexType == 3)
+                    {
+                        <span>Nifty 200</span>
+                    }
+                    else
+                    {
+                        <span>Nifty 500</span>
+                    }
+                </td>
+            <td>
+                <span>@string.Format("{0:#,0.000}",item.Percentage)</span><span>%</span>
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
+
